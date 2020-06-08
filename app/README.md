@@ -1,10 +1,9 @@
 ## usersテーブル
 |Column|Type|Options|
 |------|----|-------|
-|username|string|null: false|
+|name|string|null: false|
 |email|string|null: false, unique: true|
 |password|string|null: false|
-|group_id|integer|null: false, foreign_key: true|
 
 ### Association
 - has_many :massages
@@ -15,9 +14,8 @@
 ## massagesテーブル
 |Column|Type|Options|
 |------|----|-------|
-|massage|text|null: false|
+|massage|text|
 |image|string|
-|posttime|datetime|null: false|
 |user_id|integer|null: false, foreign_key: true|
 |group_id|integer|null: false, foreign_key: true|
 
@@ -29,7 +27,7 @@
 ## groupsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|groupname|string|null: false|
+|name|string|null: false|
 
 ### Association
 - has_many :groups_users
