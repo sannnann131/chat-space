@@ -55,11 +55,11 @@ $message-color: #434a54;
         color: #999999;
         margin: 0 0 12px 10px;
         }
-       &__content {
-        font-size: 14px;
-        color: $message-color;
-        margin-bottom: 46px;
-        }
+      }
+      &__content {
+      font-size: 14px;
+      color: $message-color;
+      margin-bottom: 46px;
       }
     }
     form {
