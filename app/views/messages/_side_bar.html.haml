@@ -1,0 +1,22 @@
+.chat-side
+  .side-hedder
+    .side-box
+      %p.side-box__user-name
+        name
+      %ul.side-box__menu 
+        %li.side-box__edit-user
+          =link_to "#" , class: "side-box__contents__btn" do
+            =icon('fas', 'edit')
+        %li.side-box_new-group
+          =link_to "#" , class: "side-box__contents__btn" do
+            =icon('fas', 'cog')
+  .side-groups
+    = link_to "#" , class:"group" do
+      %p.group__group-name
+        group
+      %p.group__new-message
+        まだメッセージがありません
+      %p.group__group-name
+        group2
+      %p.group__new-message
+        まだメッセージがありません
