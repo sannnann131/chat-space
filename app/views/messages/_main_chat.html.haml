@@ -2,31 +2,19 @@
   .main-hedder
     .main-group
       %h2.main-group__current-group
-        group
+        = @group.name
       %ul.main-group__group-member
-        Member : name
-    = link_to "#" , class:"main-group__edit-btn" do
+        - @group.users.each do |user|
+          = user.name
+    = link_to edit_group_path(@group.id) , class:"main-group__edit-btn" do
       Edit
   .messages
-    .message-date
-      %p.message-date__send-name
-        name
-      %p.message-date__send-date
-        2020/06/13(Sat) 21:00:00
-    %p.messages__content
-      メッセージの内容
-    .message-date
-      %p.message-date__send-name
-        name
-      %p.message-date__send-date
-        2020/06/13(Sat) 21:00:05
-    %p.messages__content
-      メッセージの内容2
+    = render @messages
   .form
-    %form.new_message
+    = form_for [@group, @message] do |f|
       .input-box
-        %input{type: "text", class: "input-box__text", placeholder: "type a message"}
+        = f.text_field :content, class: "input-box__text", placeholder: "type a message"
         %label{class: "input-box__image"}
           = icon('fas' ,'image')
-          %input{type: "file", class: "input-box__image__file"}
+          = f.file_field :image, type: "file", class: "input-box__image__file"
       %input{type: "submit",class: "submit-btn", value: "Send"}
