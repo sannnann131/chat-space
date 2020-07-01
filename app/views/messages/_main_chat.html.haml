@@ -5,7 +5,7 @@
         = @group.name
       %ul.main-group__group-member
         - @group.users.each do |user|
-          = user.name
+          = Member: user.name
     = link_to edit_group_path(@group.id) , class:"main-group__edit-btn" do
       Edit
   .messages
