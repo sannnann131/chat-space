@@ -4,8 +4,9 @@
       %h2.main-group__current-group
         = @group.name
       %ul.main-group__group-member
+        Member:
         - @group.users.each do |user|
-          = Member: user.name
+          = user.name
     = link_to edit_group_path(@group.id) , class:"main-group__edit-btn" do
       Edit
   .messages

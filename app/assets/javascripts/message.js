@@ -56,10 +56,9 @@ $(function(){
       $('.messages').append(html);
       $('form')[0].reset();
       $('.messages').animate({ scrollTop: $('.messages')[0].scrollHeight});
-      $('submit-btn').prop('disabled', false);
       })
     .fail(function() {
-    alert("メッセージ送信に失敗しました");
+    alert("メッセージを入力してください");
     });
   })
   var reloadMessages = function() {
